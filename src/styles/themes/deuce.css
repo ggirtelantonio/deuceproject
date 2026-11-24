@@ -1,0 +1,56 @@
+/* DEUCE — graphite, dark-only, electric-cyan signal color. */
+[data-theme='deuce'],
+[data-theme='deuce'].dark {
+  --background: oklch(0.165 0.004 260);
+  --foreground: oklch(0.95 0.003 260);
+  --card: oklch(0.195 0.005 260);
+  --card-foreground: oklch(0.95 0.003 260);
+  --popover: oklch(0.205 0.005 260);
+  --popover-foreground: oklch(0.95 0.003 260);
+  --primary: oklch(0.82 0.13 205);
+  --primary-foreground: oklch(0.17 0.02 230);
+  --secondary: oklch(0.24 0.006 260);
+  --secondary-foreground: oklch(0.92 0.003 260);
+  --muted: oklch(0.225 0.005 260);
+  --muted-foreground: oklch(0.66 0.01 260);
+  --accent: oklch(0.25 0.008 250);
+  --accent-foreground: oklch(0.96 0.003 260);
+  --destructive: oklch(0.66 0.19 22);
+  --destructive-foreground: oklch(0.98 0 0);
+  --success: oklch(0.76 0.14 160);
+  --warning: oklch(0.8 0.13 80);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.82 0.13 205 / 60%);
+  --chart-1: oklch(0.82 0.13 205);
+  --chart-2: oklch(0.7 0.1 225);
+  --chart-3: oklch(0.76 0.14 160);
+  --chart-4: oklch(0.6 0.02 260);
+  --chart-5: oklch(0.8 0.13 80);
+  --sidebar: oklch(0.145 0.004 260);
+  --sidebar-foreground: oklch(0.9 0.003 260);
+  --sidebar-primary: oklch(0.82 0.13 205);
+  --sidebar-primary-foreground: oklch(0.17 0.02 230);
+  --sidebar-accent: oklch(0.21 0.006 260);
+  --sidebar-accent-foreground: oklch(0.97 0.003 260);
+  --sidebar-border: oklch(1 0 0 / 7%);
+  --sidebar-ring: oklch(0.82 0.13 205 / 60%);
+  --font-sans: Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px 0 oklch(0 0 0 / 0.35);
+  --shadow: 0 1px 3px 0 oklch(0 0 0 / 0.4);
+  --shadow-md: 0 4px 12px -2px oklch(0 0 0 / 0.45);
+  --shadow-lg: 0 12px 32px -8px oklch(0 0 0 / 0.55);
+  --glow-primary: 0 0 0 1px oklch(0.82 0.13 205 / 25%), 0 8px 30px -10px oklch(0.82 0.13 205 / 35%);
+  --gradient-surface: linear-gradient(180deg, oklch(1 0 0 / 3%), transparent 60%);
+  --tracking-normal: -0.005em;
+  --spacing: 0.25rem;
+}
+
+[data-theme='deuce'] body {
+  letter-spacing: var(--tracking-normal);
+  background-image: radial-gradient(1200px 500px at 70% -10%, oklch(0.82 0.13 205 / 6%), transparent 60%);
+  background-attachment: fixed;
+}

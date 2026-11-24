@@ -4,9 +4,9 @@ import ChatViewPage from '@/features/chat/components/chat-view-page';
 export const Route = createFileRoute('/_authenticated/dashboard/chat')({
   head: () => ({
     meta: [
-      { title: 'Chat | Shadcn Dashboard' },
+      { title: 'Chat | DEUCE' },
       { name: 'description', content: 'Team messenger with conversations and message history.' },
-      { property: 'og:title', content: 'Chat | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Chat | DEUCE' },
       { property: 'og:description', content: 'Team messenger with conversations and message history.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

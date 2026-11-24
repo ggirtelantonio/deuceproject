@@ -25,7 +25,7 @@ export function ActiveThemeProvider({
   children: ReactNode;
   initialTheme?: string;
 }) {
-  const themeToUse = initialTheme || DEFAULT_THEME;
+  const themeToUse = DEFAULT_THEME;
   const [activeTheme, setActiveTheme] = useState<string>(themeToUse);
   const hydrated = useRef(false);
 
@@ -33,7 +33,7 @@ export function ActiveThemeProvider({
   useEffect(() => {
     const m = document.cookie.match(/(?:^|; )active_theme=([^;]+)/);
     hydrated.current = true;
-    if (m?.[1] && m[1] !== activeTheme) setActiveTheme(m[1]);
+    void m;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -11,9 +11,9 @@ export const Route = createFileRoute('/_authenticated/dashboard/product/$product
   },
   head: () => ({
     meta: [
-      { title: 'Product | Shadcn Dashboard' },
+      { title: 'Product | DEUCE' },
       { name: 'description', content: 'View, create or edit a product.' },
-      { property: 'og:title', content: 'Product | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Product | DEUCE' },
       { property: 'og:description', content: 'View, create or edit a product.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

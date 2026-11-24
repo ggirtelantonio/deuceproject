@@ -5,9 +5,9 @@ import SheetFormDemo from '@/features/forms/components/sheet-form-demo';
 export const Route = createFileRoute('/_authenticated/dashboard/forms/sheet-form')({
   head: () => ({
     meta: [
-      { title: 'Sheet Form | Shadcn Dashboard' },
+      { title: 'Sheet Form | DEUCE' },
       { name: 'description', content: 'Form patterns inside sheets and dialogs.' },
-      { property: 'og:title', content: 'Sheet Form | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Sheet Form | DEUCE' },
       { property: 'og:description', content: 'Form patterns inside sheets and dialogs.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

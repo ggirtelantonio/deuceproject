@@ -18,15 +18,21 @@ import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
 import { Route as AuthSignUpRouteImport } from './routes/auth/sign-up'
 import { Route as AuthenticatedDashboardIndexRouteImport } from './routes/_authenticated/dashboard/index'
 import { Route as AuthenticatedDashboardAiChatRouteImport } from './routes/_authenticated/dashboard/ai-chat'
+import { Route as AuthenticatedDashboardAnalyticsRouteImport } from './routes/_authenticated/dashboard/analytics'
 import { Route as AuthenticatedDashboardBillingRouteImport } from './routes/_authenticated/dashboard/billing'
 import { Route as AuthenticatedDashboardChatRouteImport } from './routes/_authenticated/dashboard/chat'
+import { Route as AuthenticatedDashboardCustomersRouteImport } from './routes/_authenticated/dashboard/customers'
+import { Route as AuthenticatedDashboardEmployeesRouteImport } from './routes/_authenticated/dashboard/employees'
 import { Route as AuthenticatedDashboardExclusiveRouteImport } from './routes/_authenticated/dashboard/exclusive'
+import { Route as AuthenticatedDashboardIntegrationsRouteImport } from './routes/_authenticated/dashboard/integrations'
 import { Route as AuthenticatedDashboardKanbanRouteImport } from './routes/_authenticated/dashboard/kanban'
 import { Route as AuthenticatedDashboardNotificationsRouteImport } from './routes/_authenticated/dashboard/notifications'
 import { Route as AuthenticatedDashboardOverviewRouteImport } from './routes/_authenticated/dashboard/overview'
 import { Route as AuthenticatedDashboardProfileRouteImport } from './routes/_authenticated/dashboard/profile'
 import { Route as AuthenticatedDashboardReactQueryRouteImport } from './routes/_authenticated/dashboard/react-query'
+import { Route as AuthenticatedDashboardSettingsRouteImport } from './routes/_authenticated/dashboard/settings'
 import { Route as AuthenticatedDashboardUsersRouteImport } from './routes/_authenticated/dashboard/users'
+import { Route as AuthenticatedDashboardWorkflowsRouteImport } from './routes/_authenticated/dashboard/workflows'
 import { Route as AuthenticatedDashboardElementsIconsRouteImport } from './routes/_authenticated/dashboard/elements/icons'
 import { Route as AuthenticatedDashboardFormsIndexRouteImport } from './routes/_authenticated/dashboard/forms/index'
 import { Route as AuthenticatedDashboardFormsAdvancedRouteImport } from './routes/_authenticated/dashboard/forms/advanced'
@@ -85,6 +91,12 @@ const AuthenticatedDashboardAiChatRoute =
     path: '/ai-chat',
     getParentRoute: () => AuthenticatedDashboardRouteRoute,
   } as any)
+const AuthenticatedDashboardAnalyticsRoute =
+  AuthenticatedDashboardAnalyticsRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
 const AuthenticatedDashboardBillingRoute =
   AuthenticatedDashboardBillingRouteImport.update({
     id: '/billing',
@@ -97,10 +109,28 @@ const AuthenticatedDashboardChatRoute =
     path: '/chat',
     getParentRoute: () => AuthenticatedDashboardRouteRoute,
   } as any)
+const AuthenticatedDashboardCustomersRoute =
+  AuthenticatedDashboardCustomersRouteImport.update({
+    id: '/customers',
+    path: '/customers',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardEmployeesRoute =
+  AuthenticatedDashboardEmployeesRouteImport.update({
+    id: '/employees',
+    path: '/employees',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
 const AuthenticatedDashboardExclusiveRoute =
   AuthenticatedDashboardExclusiveRouteImport.update({
     id: '/exclusive',
     path: '/exclusive',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardIntegrationsRoute =
+  AuthenticatedDashboardIntegrationsRouteImport.update({
+    id: '/integrations',
+    path: '/integrations',
     getParentRoute: () => AuthenticatedDashboardRouteRoute,
   } as any)
 const AuthenticatedDashboardKanbanRoute =
@@ -133,10 +163,22 @@ const AuthenticatedDashboardReactQueryRoute =
     path: '/react-query',
     getParentRoute: () => AuthenticatedDashboardRouteRoute,
   } as any)
+const AuthenticatedDashboardSettingsRoute =
+  AuthenticatedDashboardSettingsRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
 const AuthenticatedDashboardUsersRoute =
   AuthenticatedDashboardUsersRouteImport.update({
     id: '/users',
     path: '/users',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardWorkflowsRoute =
+  AuthenticatedDashboardWorkflowsRouteImport.update({
+    id: '/workflows',
+    path: '/workflows',
     getParentRoute: () => AuthenticatedDashboardRouteRoute,
   } as any)
 const AuthenticatedDashboardElementsIconsRoute =
@@ -208,15 +250,21 @@ export interface FileRoutesByFullPath {
   '/auth/sign-up': typeof AuthSignUpRoute
   '/auth/': typeof AuthIndexRoute
   '/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
   '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
   '/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/dashboard/customers': typeof AuthenticatedDashboardCustomersRoute
+  '/dashboard/employees': typeof AuthenticatedDashboardEmployeesRoute
   '/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/dashboard/integrations': typeof AuthenticatedDashboardIntegrationsRoute
   '/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
   '/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
   '/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
   '/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
   '/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/dashboard/workflows': typeof AuthenticatedDashboardWorkflowsRoute
   '/dashboard/': typeof AuthenticatedDashboardIndexRoute
   '/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
   '/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
@@ -236,15 +284,21 @@ export interface FileRoutesByTo {
   '/auth/sign-up': typeof AuthSignUpRoute
   '/auth': typeof AuthIndexRoute
   '/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
   '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
   '/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/dashboard/customers': typeof AuthenticatedDashboardCustomersRoute
+  '/dashboard/employees': typeof AuthenticatedDashboardEmployeesRoute
   '/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/dashboard/integrations': typeof AuthenticatedDashboardIntegrationsRoute
   '/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
   '/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
   '/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
   '/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
   '/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/dashboard/workflows': typeof AuthenticatedDashboardWorkflowsRoute
   '/dashboard': typeof AuthenticatedDashboardIndexRoute
   '/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
   '/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
@@ -267,15 +321,21 @@ export interface FileRoutesById {
   '/auth/sign-up': typeof AuthSignUpRoute
   '/auth/': typeof AuthIndexRoute
   '/_authenticated/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/_authenticated/dashboard/analytics': typeof AuthenticatedDashboardAnalyticsRoute
   '/_authenticated/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
   '/_authenticated/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/_authenticated/dashboard/customers': typeof AuthenticatedDashboardCustomersRoute
+  '/_authenticated/dashboard/employees': typeof AuthenticatedDashboardEmployeesRoute
   '/_authenticated/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/_authenticated/dashboard/integrations': typeof AuthenticatedDashboardIntegrationsRoute
   '/_authenticated/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
   '/_authenticated/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
   '/_authenticated/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
   '/_authenticated/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
   '/_authenticated/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/_authenticated/dashboard/settings': typeof AuthenticatedDashboardSettingsRoute
   '/_authenticated/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/_authenticated/dashboard/workflows': typeof AuthenticatedDashboardWorkflowsRoute
   '/_authenticated/dashboard/': typeof AuthenticatedDashboardIndexRoute
   '/_authenticated/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
   '/_authenticated/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
@@ -298,15 +358,21 @@ export interface FileRouteTypes {
     | '/auth/sign-up'
     | '/auth/'
     | '/dashboard/ai-chat'
+    | '/dashboard/analytics'
     | '/dashboard/billing'
     | '/dashboard/chat'
+    | '/dashboard/customers'
+    | '/dashboard/employees'
     | '/dashboard/exclusive'
+    | '/dashboard/integrations'
     | '/dashboard/kanban'
     | '/dashboard/notifications'
     | '/dashboard/overview'
     | '/dashboard/profile'
     | '/dashboard/react-query'
+    | '/dashboard/settings'
     | '/dashboard/users'
+    | '/dashboard/workflows'
     | '/dashboard/'
     | '/dashboard/elements/icons'
     | '/dashboard/forms/advanced'
@@ -326,15 +392,21 @@ export interface FileRouteTypes {
     | '/auth/sign-up'
     | '/auth'
     | '/dashboard/ai-chat'
+    | '/dashboard/analytics'
     | '/dashboard/billing'
     | '/dashboard/chat'
+    | '/dashboard/customers'
+    | '/dashboard/employees'
     | '/dashboard/exclusive'
+    | '/dashboard/integrations'
     | '/dashboard/kanban'
     | '/dashboard/notifications'
     | '/dashboard/overview'
     | '/dashboard/profile'
     | '/dashboard/react-query'
+    | '/dashboard/settings'
     | '/dashboard/users'
+    | '/dashboard/workflows'
     | '/dashboard'
     | '/dashboard/elements/icons'
     | '/dashboard/forms/advanced'
@@ -356,15 +428,21 @@ export interface FileRouteTypes {
     | '/auth/sign-up'
     | '/auth/'
     | '/_authenticated/dashboard/ai-chat'
+    | '/_authenticated/dashboard/analytics'
     | '/_authenticated/dashboard/billing'
     | '/_authenticated/dashboard/chat'
+    | '/_authenticated/dashboard/customers'
+    | '/_authenticated/dashboard/employees'
     | '/_authenticated/dashboard/exclusive'
+    | '/_authenticated/dashboard/integrations'
     | '/_authenticated/dashboard/kanban'
     | '/_authenticated/dashboard/notifications'
     | '/_authenticated/dashboard/overview'
     | '/_authenticated/dashboard/profile'
     | '/_authenticated/dashboard/react-query'
+    | '/_authenticated/dashboard/settings'
     | '/_authenticated/dashboard/users'
+    | '/_authenticated/dashboard/workflows'
     | '/_authenticated/dashboard/'
     | '/_authenticated/dashboard/elements/icons'
     | '/_authenticated/dashboard/forms/advanced'
@@ -452,6 +530,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardAiChatRouteImport
       parentRoute: typeof AuthenticatedDashboardRouteRoute
     }
+    '/_authenticated/dashboard/analytics': {
+      id: '/_authenticated/dashboard/analytics'
+      path: '/analytics'
+      fullPath: '/dashboard/analytics'
+      preLoaderRoute: typeof AuthenticatedDashboardAnalyticsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
     '/_authenticated/dashboard/billing': {
       id: '/_authenticated/dashboard/billing'
       path: '/billing'
@@ -466,11 +551,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardChatRouteImport
       parentRoute: typeof AuthenticatedDashboardRouteRoute
     }
+    '/_authenticated/dashboard/customers': {
+      id: '/_authenticated/dashboard/customers'
+      path: '/customers'
+      fullPath: '/dashboard/customers'
+      preLoaderRoute: typeof AuthenticatedDashboardCustomersRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/employees': {
+      id: '/_authenticated/dashboard/employees'
+      path: '/employees'
+      fullPath: '/dashboard/employees'
+      preLoaderRoute: typeof AuthenticatedDashboardEmployeesRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
     '/_authenticated/dashboard/exclusive': {
       id: '/_authenticated/dashboard/exclusive'
       path: '/exclusive'
       fullPath: '/dashboard/exclusive'
       preLoaderRoute: typeof AuthenticatedDashboardExclusiveRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/integrations': {
+      id: '/_authenticated/dashboard/integrations'
+      path: '/integrations'
+      fullPath: '/dashboard/integrations'
+      preLoaderRoute: typeof AuthenticatedDashboardIntegrationsRouteImport
       parentRoute: typeof AuthenticatedDashboardRouteRoute
     }
     '/_authenticated/dashboard/kanban': {
@@ -508,11 +614,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardReactQueryRouteImport
       parentRoute: typeof AuthenticatedDashboardRouteRoute
     }
+    '/_authenticated/dashboard/settings': {
+      id: '/_authenticated/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof AuthenticatedDashboardSettingsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
     '/_authenticated/dashboard/users': {
       id: '/_authenticated/dashboard/users'
       path: '/users'
       fullPath: '/dashboard/users'
       preLoaderRoute: typeof AuthenticatedDashboardUsersRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/workflows': {
+      id: '/_authenticated/dashboard/workflows'
+      path: '/workflows'
+      fullPath: '/dashboard/workflows'
+      preLoaderRoute: typeof AuthenticatedDashboardWorkflowsRouteImport
       parentRoute: typeof AuthenticatedDashboardRouteRoute
     }
     '/_authenticated/dashboard/elements/icons': {
@@ -590,15 +710,21 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedDashboardRouteRouteChildren {
   AuthenticatedDashboardAiChatRoute: typeof AuthenticatedDashboardAiChatRoute
+  AuthenticatedDashboardAnalyticsRoute: typeof AuthenticatedDashboardAnalyticsRoute
   AuthenticatedDashboardBillingRoute: typeof AuthenticatedDashboardBillingRoute
   AuthenticatedDashboardChatRoute: typeof AuthenticatedDashboardChatRoute
+  AuthenticatedDashboardCustomersRoute: typeof AuthenticatedDashboardCustomersRoute
+  AuthenticatedDashboardEmployeesRoute: typeof AuthenticatedDashboardEmployeesRoute
   AuthenticatedDashboardExclusiveRoute: typeof AuthenticatedDashboardExclusiveRoute
+  AuthenticatedDashboardIntegrationsRoute: typeof AuthenticatedDashboardIntegrationsRoute
   AuthenticatedDashboardKanbanRoute: typeof AuthenticatedDashboardKanbanRoute
   AuthenticatedDashboardNotificationsRoute: typeof AuthenticatedDashboardNotificationsRoute
   AuthenticatedDashboardOverviewRoute: typeof AuthenticatedDashboardOverviewRoute
   AuthenticatedDashboardProfileRoute: typeof AuthenticatedDashboardProfileRoute
   AuthenticatedDashboardReactQueryRoute: typeof AuthenticatedDashboardReactQueryRoute
+  AuthenticatedDashboardSettingsRoute: typeof AuthenticatedDashboardSettingsRoute
   AuthenticatedDashboardUsersRoute: typeof AuthenticatedDashboardUsersRoute
+  AuthenticatedDashboardWorkflowsRoute: typeof AuthenticatedDashboardWorkflowsRoute
   AuthenticatedDashboardIndexRoute: typeof AuthenticatedDashboardIndexRoute
   AuthenticatedDashboardElementsIconsRoute: typeof AuthenticatedDashboardElementsIconsRoute
   AuthenticatedDashboardFormsAdvancedRoute: typeof AuthenticatedDashboardFormsAdvancedRoute
@@ -615,9 +741,14 @@ interface AuthenticatedDashboardRouteRouteChildren {
 const AuthenticatedDashboardRouteRouteChildren: AuthenticatedDashboardRouteRouteChildren =
   {
     AuthenticatedDashboardAiChatRoute: AuthenticatedDashboardAiChatRoute,
+    AuthenticatedDashboardAnalyticsRoute: AuthenticatedDashboardAnalyticsRoute,
     AuthenticatedDashboardBillingRoute: AuthenticatedDashboardBillingRoute,
     AuthenticatedDashboardChatRoute: AuthenticatedDashboardChatRoute,
+    AuthenticatedDashboardCustomersRoute: AuthenticatedDashboardCustomersRoute,
+    AuthenticatedDashboardEmployeesRoute: AuthenticatedDashboardEmployeesRoute,
     AuthenticatedDashboardExclusiveRoute: AuthenticatedDashboardExclusiveRoute,
+    AuthenticatedDashboardIntegrationsRoute:
+      AuthenticatedDashboardIntegrationsRoute,
     AuthenticatedDashboardKanbanRoute: AuthenticatedDashboardKanbanRoute,
     AuthenticatedDashboardNotificationsRoute:
       AuthenticatedDashboardNotificationsRoute,
@@ -625,7 +756,9 @@ const AuthenticatedDashboardRouteRouteChildren: AuthenticatedDashboardRouteRoute
     AuthenticatedDashboardProfileRoute: AuthenticatedDashboardProfileRoute,
     AuthenticatedDashboardReactQueryRoute:
       AuthenticatedDashboardReactQueryRoute,
+    AuthenticatedDashboardSettingsRoute: AuthenticatedDashboardSettingsRoute,
     AuthenticatedDashboardUsersRoute: AuthenticatedDashboardUsersRoute,
+    AuthenticatedDashboardWorkflowsRoute: AuthenticatedDashboardWorkflowsRoute,
     AuthenticatedDashboardIndexRoute: AuthenticatedDashboardIndexRoute,
     AuthenticatedDashboardElementsIconsRoute:
       AuthenticatedDashboardElementsIconsRoute,

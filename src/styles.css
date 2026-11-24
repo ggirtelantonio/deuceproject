@@ -661,3 +661,38 @@
     -webkit-text-fill-color: currentColor;
   }
 }
+
+/* DEUCE tokens and utilities */
+@theme inline {
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --shadow-glow: var(--glow-primary);
+}
+
+@utility surface {
+  background-image: var(--gradient-surface);
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@keyframes deuce-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@utility animate-signal {
+  animation: deuce-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes deuce-fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@utility animate-enter {
+  animation: deuce-fade-up 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

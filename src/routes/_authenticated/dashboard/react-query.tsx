@@ -8,9 +8,9 @@ import { reactQueryInfoContent } from '@/features/react-query-demo/info-content'
 export const Route = createFileRoute('/_authenticated/dashboard/react-query')({
   head: () => ({
     meta: [
-      { title: 'React Query | Shadcn Dashboard' },
+      { title: 'React Query | DEUCE' },
       { name: 'description', content: 'Prefetch, cache and suspense query pattern.' },
-      { property: 'og:title', content: 'React Query | Shadcn Dashboard' },
+      { property: 'og:title', content: 'React Query | DEUCE' },
       { property: 'og:description', content: 'Prefetch, cache and suspense query pattern.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

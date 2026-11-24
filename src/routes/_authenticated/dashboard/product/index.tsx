@@ -10,9 +10,9 @@ import { productInfoContent } from '@/config/infoconfig';
 export const Route = createFileRoute('/_authenticated/dashboard/product/')({
   head: () => ({
     meta: [
-      { title: 'Products | Shadcn Dashboard' },
+      { title: 'Products | DEUCE' },
       { name: 'description', content: 'Manage products with a searchable, sortable table.' },
-      { property: 'og:title', content: 'Products | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Products | DEUCE' },
       { property: 'og:description', content: 'Manage products with a searchable, sortable table.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

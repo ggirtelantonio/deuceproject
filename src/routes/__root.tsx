@@ -86,10 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Shadcn Dashboard" },
-      { name: "description", content: "Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces." },
-      { property: "og:title", content: "Shadcn Dashboard" },
-      { property: "og:description", content: "Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces." },
+      { title: "DEUCE — AI Business Operating System" },
+      { name: "description", content: "Run your business with autonomous AI employees, workflows and approvals in one operating system." },
+      { property: "og:title", content: "DEUCE — AI Business Operating System" },
+      { property: "og:description", content: "Run your business with autonomous AI employees, workflows and approvals in one operating system." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -115,14 +115,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning data-theme={DEFAULT_THEME}>
+    <html lang="en" className="dark" suppressHydrationWarning data-theme={DEFAULT_THEME}>
       <head>
         <HeadContent />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var m=document.cookie.match(/(?:^|; )active_theme=([^;]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);}catch(_){}`,
-          }}
-        />
       </head>
       <body className="bg-background overflow-x-hidden overscroll-none font-sans antialiased">
         {children}
@@ -139,7 +134,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <NuqsAdapter>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange enableColorScheme>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange enableColorScheme>
           <Providers activeThemeValue={DEFAULT_THEME}>
             <Toaster />
             <Outlet />

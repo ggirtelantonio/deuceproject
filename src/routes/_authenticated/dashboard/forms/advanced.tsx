@@ -5,9 +5,9 @@ import AdvancedFormPatterns from '@/features/forms/components/advanced-form-patt
 export const Route = createFileRoute('/_authenticated/dashboard/forms/advanced')({
   head: () => ({
     meta: [
-      { title: 'Advanced Form Patterns | Shadcn Dashboard' },
+      { title: 'Advanced Form Patterns | DEUCE' },
       { name: 'description', content: 'Linked fields, async validation, dynamic rows and more.' },
-      { property: 'og:title', content: 'Advanced Form Patterns | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Advanced Form Patterns | DEUCE' },
       { property: 'og:description', content: 'Linked fields, async validation, dynamic rows and more.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

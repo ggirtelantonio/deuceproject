@@ -7,9 +7,9 @@ import { UserFormSheetTrigger } from '@/features/users/components/user-form-shee
 export const Route = createFileRoute('/_authenticated/dashboard/users')({
   head: () => ({
     meta: [
-      { title: 'Users | Shadcn Dashboard' },
+      { title: 'Users | DEUCE' },
       { name: 'description', content: 'Manage users with a searchable, sortable table.' },
-      { property: 'og:title', content: 'Users | Shadcn Dashboard' },
+      { property: 'og:title', content: 'Users | DEUCE' },
       { property: 'og:description', content: 'Manage users with a searchable, sortable table.' },
       { name: 'robots', content: 'noindex, nofollow' }
     ]

@@ -89,7 +89,15 @@ import {
   IconUsers,
   IconVideo,
   IconCrown,
-  IconX
+  IconX,
+  IconRobot,
+  IconTopologyStar3,
+  IconAddressBook,
+  IconChartBar,
+  IconPlug,
+  IconPlayerPause,
+  IconPlayerPlay,
+  IconBolt,
 } from '@tabler/icons-react';
 
 export type Icon = React.ComponentType<IconProps>;
@@ -127,6 +135,14 @@ export const Icons = {
 
   // Layout
   dashboard: IconLayoutDashboard,
+  robot: IconRobot,
+  workflow: IconTopologyStar3,
+  customers: IconAddressBook,
+  analytics: IconChartBar,
+  integrations: IconPlug,
+  pause: IconPlayerPause,
+  play: IconPlayerPlay,
+  bolt: IconBolt,
   kanban: IconLayoutKanban,
   panelLeft: IconLayoutSidebar,
   panelLeftClose: IconLayoutSidebarLeftCollapse,

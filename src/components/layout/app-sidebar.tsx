@@ -272,12 +272,12 @@ function NavUser() {
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem onClick={() => router.push('/dashboard/profile')}>
+              <DropdownMenuItem onClick={() => router.push('/dashboard/settings')}>
                 <Icons.account />
                 Profile
               </DropdownMenuItem>
               {organization && (
-                <DropdownMenuItem onClick={() => router.push('/dashboard/billing')}>
+                <DropdownMenuItem onClick={() => router.push('/dashboard/settings')}>
                   <Icons.creditCard />
                   Billing
                 </DropdownMenuItem>

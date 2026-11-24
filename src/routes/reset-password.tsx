@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { supabase } from '@/integrations/supabase/client';
 
 export const Route = createFileRoute('/reset-password')({
-  head: () => ({ meta: [{ title: 'Reset Password | Shadcn Dashboard' }, { name: 'description', content: 'Choose a new password for your account.' }, { property: 'og:title', content: 'Reset Password | Shadcn Dashboard' }, { property: 'og:description', content: 'Choose a new password for your account.' }] }),
+  head: () => ({ meta: [{ title: 'Reset Password | DEUCE' }, { name: 'description', content: 'Choose a new password for your account.' }, { property: 'og:title', content: 'Reset Password | DEUCE' }, { property: 'og:description', content: 'Choose a new password for your account.' }] }),
   component: ResetPassword
 });
 

@@ -1,9 +1,6 @@
 import { Separator } from '../ui/separator';
 import { Breadcrumbs } from '../breadcrumbs';
 import SearchInput from '../search-input';
-import { ThemeSelector } from '../themes/theme-selector';
-import { ThemeModeToggle } from '../themes/theme-mode-toggle';
-import CtaGithub from './cta-github';
 import { SidebarToggle } from './sidebar-toggle';
 import { NotificationCenter } from '@/features/notifications/components/notification-center';
 
@@ -21,11 +18,6 @@ export default function Header() {
 
       <div className='flex shrink-0 items-center gap-1'>
         <SearchInput />
-        <CtaGithub />
-        <ThemeModeToggle />
-        <div className='hidden sm:block'>
-          <ThemeSelector />
-        </div>
         <NotificationCenter />
       </div>
     </header>
