@@ -34,3 +34,4 @@ use the editor.
 - Ported components navigate through `@/lib/compat/{navigation,link,image}` (thin adapters over TanStack Router) instead of framework-specific imports; keep new code on TanStack Router APIs directly.
 - Account + workspace state lives in `@/lib/auth` (Lovable Cloud auth, `profiles`, `workspaces`, `workspace_members`); screens read it through its hooks, never through a second auth listener.
 - Products, users, kanban, chat and overview data are in-browser mock data (faker), as in the source template.
+- DEUCE product screens live in `src/features/deuce` with demo data in `src/constants/deuce-data.ts` and browser-only state in a zustand store; the dark-only `deuce` theme is forced as the default.
