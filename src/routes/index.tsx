@@ -1,23 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from '@tanstack/react-router';
+import { supabase } from '@/integrations/supabase/client';
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
+// Sends signed-in people to the dashboard and everyone else to sign in.
+export const Route = createFileRoute('/')({
+  ssr: false,
+  head: () => ({ meta: [{ title: 'Shadcn Dashboard' }, { name: 'description', content: 'Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces.' }, { property: 'og:title', content: 'Shadcn Dashboard' }, { property: 'og:description', content: 'Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces.' }] }),
+  beforeLoad: async () => {
+    const { data } = await supabase.auth.getUser();
+    throw redirect({ to: data.user ? '/dashboard/overview' : '/auth/sign-in' });
+  }
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}

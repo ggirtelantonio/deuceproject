@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Code was ported from a Next.js starter; `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noPropertyAccessFromIndexSignature` and `noImplicitReturns` are off in tsconfig because the ported components were written without them.
+- Ported components navigate through `@/lib/compat/{navigation,link,image}` (thin adapters over TanStack Router) instead of framework-specific imports; keep new code on TanStack Router APIs directly.
+- Account + workspace state lives in `@/lib/auth` (Lovable Cloud auth, `profiles`, `workspaces`, `workspace_members`); screens read it through its hooks, never through a second auth listener.
+- Products, users, kanban, chat and overview data are in-browser mock data (faker), as in the source template.

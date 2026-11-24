@@ -10,33 +10,381 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as AuthenticatedDashboardRouteRouteImport } from './routes/_authenticated/dashboard/route'
+import { Route as AuthIndexRouteImport } from './routes/auth/index'
+import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
+import { Route as AuthSignUpRouteImport } from './routes/auth/sign-up'
+import { Route as AuthenticatedDashboardIndexRouteImport } from './routes/_authenticated/dashboard/index'
+import { Route as AuthenticatedDashboardAiChatRouteImport } from './routes/_authenticated/dashboard/ai-chat'
+import { Route as AuthenticatedDashboardBillingRouteImport } from './routes/_authenticated/dashboard/billing'
+import { Route as AuthenticatedDashboardChatRouteImport } from './routes/_authenticated/dashboard/chat'
+import { Route as AuthenticatedDashboardExclusiveRouteImport } from './routes/_authenticated/dashboard/exclusive'
+import { Route as AuthenticatedDashboardKanbanRouteImport } from './routes/_authenticated/dashboard/kanban'
+import { Route as AuthenticatedDashboardNotificationsRouteImport } from './routes/_authenticated/dashboard/notifications'
+import { Route as AuthenticatedDashboardOverviewRouteImport } from './routes/_authenticated/dashboard/overview'
+import { Route as AuthenticatedDashboardProfileRouteImport } from './routes/_authenticated/dashboard/profile'
+import { Route as AuthenticatedDashboardReactQueryRouteImport } from './routes/_authenticated/dashboard/react-query'
+import { Route as AuthenticatedDashboardUsersRouteImport } from './routes/_authenticated/dashboard/users'
+import { Route as AuthenticatedDashboardElementsIconsRouteImport } from './routes/_authenticated/dashboard/elements/icons'
+import { Route as AuthenticatedDashboardFormsIndexRouteImport } from './routes/_authenticated/dashboard/forms/index'
+import { Route as AuthenticatedDashboardFormsAdvancedRouteImport } from './routes/_authenticated/dashboard/forms/advanced'
+import { Route as AuthenticatedDashboardFormsBasicRouteImport } from './routes/_authenticated/dashboard/forms/basic'
+import { Route as AuthenticatedDashboardFormsMultiStepRouteImport } from './routes/_authenticated/dashboard/forms/multi-step'
+import { Route as AuthenticatedDashboardFormsSheetFormRouteImport } from './routes/_authenticated/dashboard/forms/sheet-form'
+import { Route as AuthenticatedDashboardProductIndexRouteImport } from './routes/_authenticated/dashboard/product/index'
+import { Route as AuthenticatedDashboardProductProductIdRouteImport } from './routes/_authenticated/dashboard/product/$productId'
+import { Route as AuthenticatedDashboardWorkspacesIndexRouteImport } from './routes/_authenticated/dashboard/workspaces/index'
+import { Route as AuthenticatedDashboardWorkspacesTeamRouteImport } from './routes/_authenticated/dashboard/workspaces/team'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedDashboardRouteRoute =
+  AuthenticatedDashboardRouteRouteImport.update({
+    id: '/dashboard',
+    path: '/dashboard',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthIndexRoute = AuthIndexRouteImport.update({
+  id: '/auth/',
+  path: '/auth/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignInRoute = AuthSignInRouteImport.update({
+  id: '/auth/sign-in',
+  path: '/auth/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignUpRoute = AuthSignUpRouteImport.update({
+  id: '/auth/sign-up',
+  path: '/auth/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedDashboardIndexRoute =
+  AuthenticatedDashboardIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardAiChatRoute =
+  AuthenticatedDashboardAiChatRouteImport.update({
+    id: '/ai-chat',
+    path: '/ai-chat',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardBillingRoute =
+  AuthenticatedDashboardBillingRouteImport.update({
+    id: '/billing',
+    path: '/billing',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardChatRoute =
+  AuthenticatedDashboardChatRouteImport.update({
+    id: '/chat',
+    path: '/chat',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardExclusiveRoute =
+  AuthenticatedDashboardExclusiveRouteImport.update({
+    id: '/exclusive',
+    path: '/exclusive',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardKanbanRoute =
+  AuthenticatedDashboardKanbanRouteImport.update({
+    id: '/kanban',
+    path: '/kanban',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardNotificationsRoute =
+  AuthenticatedDashboardNotificationsRouteImport.update({
+    id: '/notifications',
+    path: '/notifications',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardOverviewRoute =
+  AuthenticatedDashboardOverviewRouteImport.update({
+    id: '/overview',
+    path: '/overview',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardProfileRoute =
+  AuthenticatedDashboardProfileRouteImport.update({
+    id: '/profile',
+    path: '/profile',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardReactQueryRoute =
+  AuthenticatedDashboardReactQueryRouteImport.update({
+    id: '/react-query',
+    path: '/react-query',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardUsersRoute =
+  AuthenticatedDashboardUsersRouteImport.update({
+    id: '/users',
+    path: '/users',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardElementsIconsRoute =
+  AuthenticatedDashboardElementsIconsRouteImport.update({
+    id: '/elements/icons',
+    path: '/elements/icons',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardFormsIndexRoute =
+  AuthenticatedDashboardFormsIndexRouteImport.update({
+    id: '/forms/',
+    path: '/forms/',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardFormsAdvancedRoute =
+  AuthenticatedDashboardFormsAdvancedRouteImport.update({
+    id: '/forms/advanced',
+    path: '/forms/advanced',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardFormsBasicRoute =
+  AuthenticatedDashboardFormsBasicRouteImport.update({
+    id: '/forms/basic',
+    path: '/forms/basic',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardFormsMultiStepRoute =
+  AuthenticatedDashboardFormsMultiStepRouteImport.update({
+    id: '/forms/multi-step',
+    path: '/forms/multi-step',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardFormsSheetFormRoute =
+  AuthenticatedDashboardFormsSheetFormRouteImport.update({
+    id: '/forms/sheet-form',
+    path: '/forms/sheet-form',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardProductIndexRoute =
+  AuthenticatedDashboardProductIndexRouteImport.update({
+    id: '/product/',
+    path: '/product/',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardProductProductIdRoute =
+  AuthenticatedDashboardProductProductIdRouteImport.update({
+    id: '/product/$productId',
+    path: '/product/$productId',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardWorkspacesIndexRoute =
+  AuthenticatedDashboardWorkspacesIndexRouteImport.update({
+    id: '/workspaces/',
+    path: '/workspaces/',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
+const AuthenticatedDashboardWorkspacesTeamRoute =
+  AuthenticatedDashboardWorkspacesTeamRouteImport.update({
+    id: '/workspaces/team',
+    path: '/workspaces/team',
+    getParentRoute: () => AuthenticatedDashboardRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/dashboard': typeof AuthenticatedDashboardRouteRouteWithChildren
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/auth/sign-up': typeof AuthSignUpRoute
+  '/auth/': typeof AuthIndexRoute
+  '/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
+  '/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
+  '/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
+  '/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
+  '/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/dashboard/': typeof AuthenticatedDashboardIndexRoute
+  '/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
+  '/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
+  '/dashboard/forms/basic': typeof AuthenticatedDashboardFormsBasicRoute
+  '/dashboard/forms/multi-step': typeof AuthenticatedDashboardFormsMultiStepRoute
+  '/dashboard/forms/sheet-form': typeof AuthenticatedDashboardFormsSheetFormRoute
+  '/dashboard/product/$productId': typeof AuthenticatedDashboardProductProductIdRoute
+  '/dashboard/workspaces/team': typeof AuthenticatedDashboardWorkspacesTeamRoute
+  '/dashboard/forms/': typeof AuthenticatedDashboardFormsIndexRoute
+  '/dashboard/product/': typeof AuthenticatedDashboardProductIndexRoute
+  '/dashboard/workspaces/': typeof AuthenticatedDashboardWorkspacesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/reset-password': typeof ResetPasswordRoute
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/auth/sign-up': typeof AuthSignUpRoute
+  '/auth': typeof AuthIndexRoute
+  '/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
+  '/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
+  '/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
+  '/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
+  '/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/dashboard': typeof AuthenticatedDashboardIndexRoute
+  '/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
+  '/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
+  '/dashboard/forms/basic': typeof AuthenticatedDashboardFormsBasicRoute
+  '/dashboard/forms/multi-step': typeof AuthenticatedDashboardFormsMultiStepRoute
+  '/dashboard/forms/sheet-form': typeof AuthenticatedDashboardFormsSheetFormRoute
+  '/dashboard/product/$productId': typeof AuthenticatedDashboardProductProductIdRoute
+  '/dashboard/workspaces/team': typeof AuthenticatedDashboardWorkspacesTeamRoute
+  '/dashboard/forms': typeof AuthenticatedDashboardFormsIndexRoute
+  '/dashboard/product': typeof AuthenticatedDashboardProductIndexRoute
+  '/dashboard/workspaces': typeof AuthenticatedDashboardWorkspacesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
+  '/_authenticated/dashboard': typeof AuthenticatedDashboardRouteRouteWithChildren
+  '/auth/sign-in': typeof AuthSignInRoute
+  '/auth/sign-up': typeof AuthSignUpRoute
+  '/auth/': typeof AuthIndexRoute
+  '/_authenticated/dashboard/ai-chat': typeof AuthenticatedDashboardAiChatRoute
+  '/_authenticated/dashboard/billing': typeof AuthenticatedDashboardBillingRoute
+  '/_authenticated/dashboard/chat': typeof AuthenticatedDashboardChatRoute
+  '/_authenticated/dashboard/exclusive': typeof AuthenticatedDashboardExclusiveRoute
+  '/_authenticated/dashboard/kanban': typeof AuthenticatedDashboardKanbanRoute
+  '/_authenticated/dashboard/notifications': typeof AuthenticatedDashboardNotificationsRoute
+  '/_authenticated/dashboard/overview': typeof AuthenticatedDashboardOverviewRoute
+  '/_authenticated/dashboard/profile': typeof AuthenticatedDashboardProfileRoute
+  '/_authenticated/dashboard/react-query': typeof AuthenticatedDashboardReactQueryRoute
+  '/_authenticated/dashboard/users': typeof AuthenticatedDashboardUsersRoute
+  '/_authenticated/dashboard/': typeof AuthenticatedDashboardIndexRoute
+  '/_authenticated/dashboard/elements/icons': typeof AuthenticatedDashboardElementsIconsRoute
+  '/_authenticated/dashboard/forms/advanced': typeof AuthenticatedDashboardFormsAdvancedRoute
+  '/_authenticated/dashboard/forms/basic': typeof AuthenticatedDashboardFormsBasicRoute
+  '/_authenticated/dashboard/forms/multi-step': typeof AuthenticatedDashboardFormsMultiStepRoute
+  '/_authenticated/dashboard/forms/sheet-form': typeof AuthenticatedDashboardFormsSheetFormRoute
+  '/_authenticated/dashboard/product/$productId': typeof AuthenticatedDashboardProductProductIdRoute
+  '/_authenticated/dashboard/workspaces/team': typeof AuthenticatedDashboardWorkspacesTeamRoute
+  '/_authenticated/dashboard/forms/': typeof AuthenticatedDashboardFormsIndexRoute
+  '/_authenticated/dashboard/product/': typeof AuthenticatedDashboardProductIndexRoute
+  '/_authenticated/dashboard/workspaces/': typeof AuthenticatedDashboardWorkspacesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/reset-password'
+    | '/dashboard'
+    | '/auth/sign-in'
+    | '/auth/sign-up'
+    | '/auth/'
+    | '/dashboard/ai-chat'
+    | '/dashboard/billing'
+    | '/dashboard/chat'
+    | '/dashboard/exclusive'
+    | '/dashboard/kanban'
+    | '/dashboard/notifications'
+    | '/dashboard/overview'
+    | '/dashboard/profile'
+    | '/dashboard/react-query'
+    | '/dashboard/users'
+    | '/dashboard/'
+    | '/dashboard/elements/icons'
+    | '/dashboard/forms/advanced'
+    | '/dashboard/forms/basic'
+    | '/dashboard/forms/multi-step'
+    | '/dashboard/forms/sheet-form'
+    | '/dashboard/product/$productId'
+    | '/dashboard/workspaces/team'
+    | '/dashboard/forms/'
+    | '/dashboard/product/'
+    | '/dashboard/workspaces/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/reset-password'
+    | '/auth/sign-in'
+    | '/auth/sign-up'
+    | '/auth'
+    | '/dashboard/ai-chat'
+    | '/dashboard/billing'
+    | '/dashboard/chat'
+    | '/dashboard/exclusive'
+    | '/dashboard/kanban'
+    | '/dashboard/notifications'
+    | '/dashboard/overview'
+    | '/dashboard/profile'
+    | '/dashboard/react-query'
+    | '/dashboard/users'
+    | '/dashboard'
+    | '/dashboard/elements/icons'
+    | '/dashboard/forms/advanced'
+    | '/dashboard/forms/basic'
+    | '/dashboard/forms/multi-step'
+    | '/dashboard/forms/sheet-form'
+    | '/dashboard/product/$productId'
+    | '/dashboard/workspaces/team'
+    | '/dashboard/forms'
+    | '/dashboard/product'
+    | '/dashboard/workspaces'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/reset-password'
+    | '/_authenticated/dashboard'
+    | '/auth/sign-in'
+    | '/auth/sign-up'
+    | '/auth/'
+    | '/_authenticated/dashboard/ai-chat'
+    | '/_authenticated/dashboard/billing'
+    | '/_authenticated/dashboard/chat'
+    | '/_authenticated/dashboard/exclusive'
+    | '/_authenticated/dashboard/kanban'
+    | '/_authenticated/dashboard/notifications'
+    | '/_authenticated/dashboard/overview'
+    | '/_authenticated/dashboard/profile'
+    | '/_authenticated/dashboard/react-query'
+    | '/_authenticated/dashboard/users'
+    | '/_authenticated/dashboard/'
+    | '/_authenticated/dashboard/elements/icons'
+    | '/_authenticated/dashboard/forms/advanced'
+    | '/_authenticated/dashboard/forms/basic'
+    | '/_authenticated/dashboard/forms/multi-step'
+    | '/_authenticated/dashboard/forms/sheet-form'
+    | '/_authenticated/dashboard/product/$productId'
+    | '/_authenticated/dashboard/workspaces/team'
+    | '/_authenticated/dashboard/forms/'
+    | '/_authenticated/dashboard/product/'
+    | '/_authenticated/dashboard/workspaces/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  ResetPasswordRoute: typeof ResetPasswordRoute
+  AuthSignInRoute: typeof AuthSignInRoute
+  AuthSignUpRoute: typeof AuthSignUpRoute
+  AuthIndexRoute: typeof AuthIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +396,283 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/dashboard': {
+      id: '/_authenticated/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedDashboardRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/auth/': {
+      id: '/auth/'
+      path: '/auth'
+      fullPath: '/auth/'
+      preLoaderRoute: typeof AuthIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/sign-in': {
+      id: '/auth/sign-in'
+      path: '/auth/sign-in'
+      fullPath: '/auth/sign-in'
+      preLoaderRoute: typeof AuthSignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/sign-up': {
+      id: '/auth/sign-up'
+      path: '/auth/sign-up'
+      fullPath: '/auth/sign-up'
+      preLoaderRoute: typeof AuthSignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/dashboard/': {
+      id: '/_authenticated/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof AuthenticatedDashboardIndexRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/ai-chat': {
+      id: '/_authenticated/dashboard/ai-chat'
+      path: '/ai-chat'
+      fullPath: '/dashboard/ai-chat'
+      preLoaderRoute: typeof AuthenticatedDashboardAiChatRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/billing': {
+      id: '/_authenticated/dashboard/billing'
+      path: '/billing'
+      fullPath: '/dashboard/billing'
+      preLoaderRoute: typeof AuthenticatedDashboardBillingRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/chat': {
+      id: '/_authenticated/dashboard/chat'
+      path: '/chat'
+      fullPath: '/dashboard/chat'
+      preLoaderRoute: typeof AuthenticatedDashboardChatRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/exclusive': {
+      id: '/_authenticated/dashboard/exclusive'
+      path: '/exclusive'
+      fullPath: '/dashboard/exclusive'
+      preLoaderRoute: typeof AuthenticatedDashboardExclusiveRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/kanban': {
+      id: '/_authenticated/dashboard/kanban'
+      path: '/kanban'
+      fullPath: '/dashboard/kanban'
+      preLoaderRoute: typeof AuthenticatedDashboardKanbanRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/notifications': {
+      id: '/_authenticated/dashboard/notifications'
+      path: '/notifications'
+      fullPath: '/dashboard/notifications'
+      preLoaderRoute: typeof AuthenticatedDashboardNotificationsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/overview': {
+      id: '/_authenticated/dashboard/overview'
+      path: '/overview'
+      fullPath: '/dashboard/overview'
+      preLoaderRoute: typeof AuthenticatedDashboardOverviewRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/profile': {
+      id: '/_authenticated/dashboard/profile'
+      path: '/profile'
+      fullPath: '/dashboard/profile'
+      preLoaderRoute: typeof AuthenticatedDashboardProfileRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/react-query': {
+      id: '/_authenticated/dashboard/react-query'
+      path: '/react-query'
+      fullPath: '/dashboard/react-query'
+      preLoaderRoute: typeof AuthenticatedDashboardReactQueryRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/users': {
+      id: '/_authenticated/dashboard/users'
+      path: '/users'
+      fullPath: '/dashboard/users'
+      preLoaderRoute: typeof AuthenticatedDashboardUsersRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/elements/icons': {
+      id: '/_authenticated/dashboard/elements/icons'
+      path: '/elements/icons'
+      fullPath: '/dashboard/elements/icons'
+      preLoaderRoute: typeof AuthenticatedDashboardElementsIconsRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/forms/': {
+      id: '/_authenticated/dashboard/forms/'
+      path: '/forms'
+      fullPath: '/dashboard/forms/'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsIndexRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/forms/advanced': {
+      id: '/_authenticated/dashboard/forms/advanced'
+      path: '/forms/advanced'
+      fullPath: '/dashboard/forms/advanced'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsAdvancedRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/forms/basic': {
+      id: '/_authenticated/dashboard/forms/basic'
+      path: '/forms/basic'
+      fullPath: '/dashboard/forms/basic'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsBasicRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/forms/multi-step': {
+      id: '/_authenticated/dashboard/forms/multi-step'
+      path: '/forms/multi-step'
+      fullPath: '/dashboard/forms/multi-step'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsMultiStepRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/forms/sheet-form': {
+      id: '/_authenticated/dashboard/forms/sheet-form'
+      path: '/forms/sheet-form'
+      fullPath: '/dashboard/forms/sheet-form'
+      preLoaderRoute: typeof AuthenticatedDashboardFormsSheetFormRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/product/': {
+      id: '/_authenticated/dashboard/product/'
+      path: '/product'
+      fullPath: '/dashboard/product/'
+      preLoaderRoute: typeof AuthenticatedDashboardProductIndexRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/product/$productId': {
+      id: '/_authenticated/dashboard/product/$productId'
+      path: '/product/$productId'
+      fullPath: '/dashboard/product/$productId'
+      preLoaderRoute: typeof AuthenticatedDashboardProductProductIdRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/workspaces/': {
+      id: '/_authenticated/dashboard/workspaces/'
+      path: '/workspaces'
+      fullPath: '/dashboard/workspaces/'
+      preLoaderRoute: typeof AuthenticatedDashboardWorkspacesIndexRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
+    '/_authenticated/dashboard/workspaces/team': {
+      id: '/_authenticated/dashboard/workspaces/team'
+      path: '/workspaces/team'
+      fullPath: '/dashboard/workspaces/team'
+      preLoaderRoute: typeof AuthenticatedDashboardWorkspacesTeamRouteImport
+      parentRoute: typeof AuthenticatedDashboardRouteRoute
+    }
   }
 }
 
+interface AuthenticatedDashboardRouteRouteChildren {
+  AuthenticatedDashboardAiChatRoute: typeof AuthenticatedDashboardAiChatRoute
+  AuthenticatedDashboardBillingRoute: typeof AuthenticatedDashboardBillingRoute
+  AuthenticatedDashboardChatRoute: typeof AuthenticatedDashboardChatRoute
+  AuthenticatedDashboardExclusiveRoute: typeof AuthenticatedDashboardExclusiveRoute
+  AuthenticatedDashboardKanbanRoute: typeof AuthenticatedDashboardKanbanRoute
+  AuthenticatedDashboardNotificationsRoute: typeof AuthenticatedDashboardNotificationsRoute
+  AuthenticatedDashboardOverviewRoute: typeof AuthenticatedDashboardOverviewRoute
+  AuthenticatedDashboardProfileRoute: typeof AuthenticatedDashboardProfileRoute
+  AuthenticatedDashboardReactQueryRoute: typeof AuthenticatedDashboardReactQueryRoute
+  AuthenticatedDashboardUsersRoute: typeof AuthenticatedDashboardUsersRoute
+  AuthenticatedDashboardIndexRoute: typeof AuthenticatedDashboardIndexRoute
+  AuthenticatedDashboardElementsIconsRoute: typeof AuthenticatedDashboardElementsIconsRoute
+  AuthenticatedDashboardFormsAdvancedRoute: typeof AuthenticatedDashboardFormsAdvancedRoute
+  AuthenticatedDashboardFormsBasicRoute: typeof AuthenticatedDashboardFormsBasicRoute
+  AuthenticatedDashboardFormsMultiStepRoute: typeof AuthenticatedDashboardFormsMultiStepRoute
+  AuthenticatedDashboardFormsSheetFormRoute: typeof AuthenticatedDashboardFormsSheetFormRoute
+  AuthenticatedDashboardProductProductIdRoute: typeof AuthenticatedDashboardProductProductIdRoute
+  AuthenticatedDashboardWorkspacesTeamRoute: typeof AuthenticatedDashboardWorkspacesTeamRoute
+  AuthenticatedDashboardFormsIndexRoute: typeof AuthenticatedDashboardFormsIndexRoute
+  AuthenticatedDashboardProductIndexRoute: typeof AuthenticatedDashboardProductIndexRoute
+  AuthenticatedDashboardWorkspacesIndexRoute: typeof AuthenticatedDashboardWorkspacesIndexRoute
+}
+
+const AuthenticatedDashboardRouteRouteChildren: AuthenticatedDashboardRouteRouteChildren =
+  {
+    AuthenticatedDashboardAiChatRoute: AuthenticatedDashboardAiChatRoute,
+    AuthenticatedDashboardBillingRoute: AuthenticatedDashboardBillingRoute,
+    AuthenticatedDashboardChatRoute: AuthenticatedDashboardChatRoute,
+    AuthenticatedDashboardExclusiveRoute: AuthenticatedDashboardExclusiveRoute,
+    AuthenticatedDashboardKanbanRoute: AuthenticatedDashboardKanbanRoute,
+    AuthenticatedDashboardNotificationsRoute:
+      AuthenticatedDashboardNotificationsRoute,
+    AuthenticatedDashboardOverviewRoute: AuthenticatedDashboardOverviewRoute,
+    AuthenticatedDashboardProfileRoute: AuthenticatedDashboardProfileRoute,
+    AuthenticatedDashboardReactQueryRoute:
+      AuthenticatedDashboardReactQueryRoute,
+    AuthenticatedDashboardUsersRoute: AuthenticatedDashboardUsersRoute,
+    AuthenticatedDashboardIndexRoute: AuthenticatedDashboardIndexRoute,
+    AuthenticatedDashboardElementsIconsRoute:
+      AuthenticatedDashboardElementsIconsRoute,
+    AuthenticatedDashboardFormsAdvancedRoute:
+      AuthenticatedDashboardFormsAdvancedRoute,
+    AuthenticatedDashboardFormsBasicRoute:
+      AuthenticatedDashboardFormsBasicRoute,
+    AuthenticatedDashboardFormsMultiStepRoute:
+      AuthenticatedDashboardFormsMultiStepRoute,
+    AuthenticatedDashboardFormsSheetFormRoute:
+      AuthenticatedDashboardFormsSheetFormRoute,
+    AuthenticatedDashboardProductProductIdRoute:
+      AuthenticatedDashboardProductProductIdRoute,
+    AuthenticatedDashboardWorkspacesTeamRoute:
+      AuthenticatedDashboardWorkspacesTeamRoute,
+    AuthenticatedDashboardFormsIndexRoute:
+      AuthenticatedDashboardFormsIndexRoute,
+    AuthenticatedDashboardProductIndexRoute:
+      AuthenticatedDashboardProductIndexRoute,
+    AuthenticatedDashboardWorkspacesIndexRoute:
+      AuthenticatedDashboardWorkspacesIndexRoute,
+  }
+
+const AuthenticatedDashboardRouteRouteWithChildren =
+  AuthenticatedDashboardRouteRoute._addFileChildren(
+    AuthenticatedDashboardRouteRouteChildren,
+  )
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedDashboardRouteRoute: typeof AuthenticatedDashboardRouteRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedDashboardRouteRoute:
+    AuthenticatedDashboardRouteRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  ResetPasswordRoute: ResetPasswordRoute,
+  AuthSignInRoute: AuthSignInRoute,
+  AuthSignUpRoute: AuthSignUpRoute,
+  AuthIndexRoute: AuthIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

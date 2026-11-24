@@ -10,7 +10,12 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import appCss from "../styles.css?url";
+import Providers from "@/components/layout/providers";
+import ThemeProvider from "@/components/themes/theme-provider";
+import { DEFAULT_THEME } from "@/components/themes/theme.config";
+import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -81,14 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Shadcn Dashboard" },
+      { name: "description", content: "Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces." },
+      { property: "og:title", content: "Shadcn Dashboard" },
+      { property: "og:description", content: "Open source admin dashboard with charts, tables, forms, kanban, chat and team workspaces." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -96,6 +99,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Outfit:wght@100..900&family=Fira+Code:wght@300..700&family=Merriweather:wght@300..900&family=Playfair+Display:wght@400..900&family=Source+Code+Pro:wght@200..900&family=Google+Sans+Flex:wght@100..1000&family=DM+Sans:wght@100..1000&family=Space+Mono:wght@400;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -106,11 +115,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning data-theme={DEFAULT_THEME}>
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var m=document.cookie.match(/(?:^|; )active_theme=([^;]+)/);if(m)document.documentElement.setAttribute('data-theme',m[1]);}catch(_){}`,
+          }}
+        />
       </head>
-      <body>
+      <body className="bg-background overflow-x-hidden overscroll-none font-sans antialiased">
         {children}
         <Scripts />
       </body>
@@ -124,7 +138,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <NuqsAdapter>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange enableColorScheme>
+          <Providers activeThemeValue={DEFAULT_THEME}>
+            <Toaster />
+            <Outlet />
+          </Providers>
+        </ThemeProvider>
+      </NuqsAdapter>
     </QueryClientProvider>
   );
 }
